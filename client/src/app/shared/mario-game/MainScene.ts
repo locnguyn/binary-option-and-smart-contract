@@ -108,12 +108,12 @@ export class MainScene extends Phaser.Scene {
   }
 
   update() {
-    let cursors = this.input.keyboard.createCursorKeys();
-    if (cursors.left.isDown) {
+    let cursors = this.input.keyboard?.createCursorKeys();
+    if (cursors?.left.isDown) {
       this.player.setVelocityX(-160);
 
       this.player.anims.play('left', true);
-    } else if (cursors.right.isDown) {
+    } else if (cursors?.right.isDown) {
       this.player.setVelocityX(160);
 
       this.player.anims.play('right', true);
@@ -123,7 +123,7 @@ export class MainScene extends Phaser.Scene {
       this.player.anims.play('turn');
     }
 
-    if (cursors.up.isDown && this.player.body.touching.down) {
+    if (cursors?.up.isDown && this.player.body.touching.down) {
       this.player.setVelocityY(-(this.nft.attrs?.pump || 1));
     }
 

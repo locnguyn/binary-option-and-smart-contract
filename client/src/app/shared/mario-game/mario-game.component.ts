@@ -23,7 +23,7 @@ export class MarioGameComponent implements OnInit, OnDestroy {
       physics: {
         default: 'arcade',
         arcade: {
-          gravity: { y: 100 },
+          gravity: { x: 0, y: 100 },
           // debug: true,
         },
       },

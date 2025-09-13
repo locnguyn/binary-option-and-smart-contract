@@ -61,7 +61,7 @@ export class HttpConfigInterceptor implements HttpInterceptor {
     if (this.refreshTokenInProgress) {
       return new Observable(observer => {
         this.tokenRefreshed$.subscribe(data => {
-          observer.next();
+          observer.next(data);
           observer.complete();
         });
       });
